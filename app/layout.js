@@ -1,7 +1,20 @@
-import { Inter } from "next/font/google";
+import { Oswald, Permanent_Marker } from "next/font/google";
 import "./globals.css";
+import Navbar from "./_components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+
+export const oswald = Oswald({ 
+  subsets: ["latin"],
+  display: 'swap',
+  variable: "--font-oswald",
+});
+
+export const sedgwick = Permanent_Marker({ 
+  subsets: ["latin"],
+  display: 'swap',
+  variable: "--font-sedgwick",
+  weight: ['400']
+});
 
 export const metadata = {
   title: "Dianciré | Développeuse Web",
@@ -10,8 +23,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${oswald.variable} ${sedgwick.variable}`}>
+      <body style={{backgroundImage: "url('/site-bg.jpg')"}}>
+        <Navbar/>
+        {children}
+      </body>
     </html>
   );
 }
