@@ -13,12 +13,14 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --primary: #12224E;
+    --secondary: #FDBB2D;
   }
 }
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
+    @apply text-white tracking-wide text-base
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold
@@ -29,4 +31,12 @@
   h2 {
     @apply text-3xl sm:text-4xl
   }
+}
+
+html {
+  font-family: var(--font-oswald);
+}
+
+.font-logo {
+  font-family: var(--font-sedgwick);
 }
