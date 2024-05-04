@@ -1,21 +1,47 @@
 'use client'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CgMenuRight, CgClose, CgMail } from "react-icons/cg"
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 function Navbar() {
     // State variable to manage the visibility of the mobile menu
-    const [nav, setNav] = useState(false)
+    const [nav, setNav] = useState(false);
+
+    // State variable to store the id of the currently active section
+    const [activeSection, setActiveSection] = useState(null);
 
     // Function to toggle the mobile menu visibility
     const handleNav = () => {
         setNav(!nav)
     }
+
+    // Effect hook to run the scrolling event listener when the component mounts
+    useEffect(() => {
+        // Function to handle scrolling events
+        const handleScroll = () => {
+            const sections = document.querySelectorAll('section[id]');
+            sections.forEach((section) => {
+                // Get the bounding rectangle of the section
+                const rect = section.getBoundingClientRect();
+                // Check if the top and bottom of the section are within the viewport
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    setActiveSection(section.id);
+                }
+            });
+        };
+        // Add a scroll event listener when the component mounts
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
   return (
     <header className='fixed w-full h-20 shadow z-[100]'>
         {/* Container for the navigation bar */}
-        <div className='flex justify-between items-center w-full h-full px-10 2xl:px-16'>
+        <div className='flex justify-between items-center w-full h-full px-4 2xl:px-16'>
             <Link href='/'>
                 <span className='font-logo text-4xl'>DD</span>
             </Link>
@@ -23,10 +49,10 @@ function Navbar() {
             <nav>
                 <ul className='hidden md:flex'>
                     <Link href='/'>
-                        <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>Accueil</li>
+                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Accueil</li>
                     </Link>
-                    <Link href='/'>
-                        <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>About</li>
+                    <Link href='/#about'>
+                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
                     </Link>
                     <Link href='/'>
                         <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>Skills</li>
@@ -71,10 +97,10 @@ function Navbar() {
                 <nav className='py-4 flex flex-col'>
                     <ul>
                         <Link href='/'>
-                            <li className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Home</li>
+                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Home</li>
                         </Link>
-                        <Link href='/'>
-                            <li className='py-4 uppercase hover:text-accent transition-all ease-in-out'>About</li>
+                        <Link href='/#about'>
+                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
                         </Link>
                         <Link href='/'>
                             <li className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Skills</li>

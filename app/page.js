@@ -1,3 +1,4 @@
+import About from "./_components/About";
 import Hero from "./_components/Hero";
 
 
@@ -6,6 +7,8 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <Hero/>
+      {/* About */}
+      <About/>
     </main>
   );
 }
