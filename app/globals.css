@@ -18,6 +18,22 @@
   }
 }
 
+.btn {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  box-shadow: 0px 4.42184px 107.23px #FE973A;
+}
+
+.btn:hover {
+  filter: saturate(150%) brightness(90%);
+}
+
+.gradient,
+.active {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
 @layer base {
   body {
     @apply text-white tracking-wide text-base
@@ -30,6 +46,12 @@
   }
   h2 {
     @apply text-3xl sm:text-4xl
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r text-[25px] text-transparent bg-clip-text from-[#22c1c3] to-[#fdbb2d] font-bold hover:from-[#fdbb2d] hover:to-[#22c1c3];
+  }
+  .btn {
+    @apply rounded-lg text-white p-4
   }
 }
 
