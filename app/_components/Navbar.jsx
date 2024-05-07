@@ -41,7 +41,7 @@ function Navbar() {
   return (
     <header className='fixed w-full h-20 shadow z-[100]'>
         {/* Container for the navigation bar */}
-        <div className='flex justify-between items-center w-full h-full px-4 2xl:px-16'>
+        <div className='flex justify-between items-center w-full h-full px-4 2xl:px-16 bg-primary'>
             <Link href='/'>
                 <span className='font-logo text-4xl'>DD</span>
             </Link>
@@ -54,8 +54,8 @@ function Navbar() {
                     <Link href='/#about'>
                         <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
                     </Link>
-                    <Link href='/'>
-                        <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>Skills</li>
+                    <Link href='/#skills'>
+                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'skills' ? 'active' : ''}}`}>Skills</li>
                     </Link>
                     <Link href='/'>
                         <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>Projects</li>
@@ -102,8 +102,8 @@ function Navbar() {
                         <Link href='/#about'>
                             <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
                         </Link>
-                        <Link href='/'>
-                            <li className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Skills</li>
+                        <Link href='/#skills'>
+                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>Skills</li>
                         </Link>
                         <Link href='/'>
                             <li className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Contact</li>
