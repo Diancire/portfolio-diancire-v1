@@ -55,10 +55,10 @@ function Navbar() {
                         <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
                     </Link>
                     <Link href='/#skills'>
-                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'skills' ? 'active' : ''}}`}>Skills</li>
+                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'skills' ? 'active' : ''}`}>Skills</li>
                     </Link>
-                    <Link href='/'>
-                        <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>Projects</li>
+                    <Link href='/#projects'>
+                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
                     </Link>
                     <Link href='/'>
                         <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>Contact</li>
@@ -104,6 +104,9 @@ function Navbar() {
                         </Link>
                         <Link href='/#skills'>
                             <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>Skills</li>
+                        </Link>
+                        <Link href='/#projects'>
+                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
                         </Link>
                         <Link href='/'>
                             <li className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Contact</li>

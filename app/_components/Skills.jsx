@@ -11,7 +11,7 @@ import { fadeIn } from '../variant';
 
 function Skills() {
   return (
-    <section id='skills' className='items-center justify-center overflow-hidden'>
+    <section id='skills' className='items-center justify-center overflow-hidden pt-24'>
         <div className='flex flex-col gap-20 text-center items-center mb-20'>
             <motion.div 
                 variants={ fadeIn('right', 0.2) }
