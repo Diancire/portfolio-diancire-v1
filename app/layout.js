@@ -1,6 +1,6 @@
 import { Oswald, Permanent_Marker } from "next/font/google";
 import "./globals.css";
-import Navbar from "./_components/Navbar";
+import Navbar from "@/components/Navbar";
 
 
 export const oswald = Oswald({ 

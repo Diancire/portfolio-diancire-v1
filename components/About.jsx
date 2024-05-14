@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variant';
+import { fadeIn } from '../app/variant';
 
 function About() {
   return (

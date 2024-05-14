@@ -97,19 +97,19 @@ function Navbar() {
                 <nav className='py-4 flex flex-col'>
                     <ul>
                         <Link href='/'>
-                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Home</li>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Home</li>
                         </Link>
                         <Link href='/#about'>
-                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
                         </Link>
                         <Link href='/#skills'>
-                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>Skills</li>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>Skills</li>
                         </Link>
                         <Link href='/#projects'>
-                            <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
                         </Link>
                         <Link href='/'>
-                            <li className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Contact</li>
+                            <li onClick={() => setNav(false)} className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Contact</li>
                         </Link>
                     </ul>
                     <div className='pt-36'>

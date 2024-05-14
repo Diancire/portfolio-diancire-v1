@@ -4,7 +4,7 @@ import React from 'react'
 import projects from '../data/projects'
 import Link from 'next/link'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variant';
+import { fadeIn } from '../app/variant';
 
 function Projects() {
   return (
@@ -43,7 +43,7 @@ function Projects() {
                               </span>
                             ))}
                         </p>
-                        <Link href='/' className='flex justify-center'>
+                        <Link href={`/${item.slug}`} className='flex justify-center'>
                           <p className='text-center py-3 rounded-lg bg-white font-bold cursor-pointer text-black w-44'>More Info</p>
                         </Link>
                     </div>

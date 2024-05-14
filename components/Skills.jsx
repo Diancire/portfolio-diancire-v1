@@ -6,7 +6,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css';
 import {Autoplay} from 'swiper/modules'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variant';
+import { fadeIn } from '../app/variant';
 
 
 function Skills() {
