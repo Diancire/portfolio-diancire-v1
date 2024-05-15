@@ -21,10 +21,10 @@ function Projects() {
             <div className='grid md:grid-cols-2 gap-8'>
               {projects.map((item, index) => (
                 <motion.div className='relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl group gradient' key={index}
-                variants={ fadeIn('right', 0.2) }
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{once: false, amount:0.7}}
+                  variants={ fadeIn('right', 0.2) }
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{once: false, amount:0.7}}
                 >
                     <Image 
                       src={item.image} 

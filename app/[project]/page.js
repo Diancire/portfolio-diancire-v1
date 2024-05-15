@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link'
 import { RiRadioButtonFill } from 'react-icons/ri';
 import { FaArrowLeft } from "react-icons/fa";
+import { motion } from 'framer-motion';
+import { fadeIn } from '../variant';
 
 export default function Project() {
   const { project } = useParams();
@@ -17,7 +19,13 @@ export default function Project() {
 
   return (
     <div className='w-full md:min-h-screen p-4 py-20 overflow-hidden md:flex md:flex-col lg:flex-row lg:items-center'>
-      <div className='flex justify-center py-4 lg:1/2'>
+      <motion.div 
+        className='flex justify-center py-4 lg:w-1/2'
+        variants={ fadeIn('right', 0.2) }
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{once: false, amount:0.7}}
+      >
         <Image
           className='w-full h-full rounded-lg'
           width={500}
@@ -25,11 +33,17 @@ export default function Project() {
           src={projectInfo.image}
           alt='/'
         />
-      </div>
-      <div className='max-w-[1240px] lg:1/2 mx-auto p-2 grid md:grid-cols-5 gap-8 py-8 lg:pl-10 lg:flex lg:flex-col'>
+      </motion.div>
+      <motion.div 
+        className='max-w-[1240px] lg:1/2 mx-auto p-2 grid md:grid-cols-5 gap-8 py-8 lg:w-1/2 lg:pl-6 lg:flex lg:flex-col'
+        variants={ fadeIn('left', 0.2) }
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{once: false, amount:0.7}}
+      >
         <div className='col-span-4'>
           <h2 className='lg:text-center'>{projectInfo.title}</h2>
-          <p>
+          <p className='text-justify'>
             {projectInfo.description}
           </p>
           <a
@@ -62,7 +76,7 @@ export default function Project() {
         <Link href='/#projects' className='btn py-2 max-w-12'>
           <FaArrowLeft className='cursor-pointer'/>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 }
