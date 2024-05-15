@@ -6,12 +6,12 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css';
 import {Autoplay} from 'swiper/modules'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variant';
+import { fadeIn } from '../app/variant';
 
 
 function Skills() {
   return (
-    <section id='skills' className='items-center justify-center overflow-hidden'>
+    <section id='skills' className='items-center justify-center overflow-hidden pt-24'>
         <div className='flex flex-col gap-20 text-center items-center mb-20'>
             <motion.div 
                 variants={ fadeIn('right', 0.2) }

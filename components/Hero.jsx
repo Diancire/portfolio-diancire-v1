@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { CgMail } from "react-icons/cg"
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variant';
+import { fadeIn } from '../app/variant';
 
 function Hero() {
   return (

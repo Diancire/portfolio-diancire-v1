@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "title": "Havre de Paix",
+        "description": "Havre de Paix is a comprehensive platform designed for individuals seeking to rent houses, apartments, and rooms for serene and pleasant stays. The platform offers a robust search functionality allowing users to filter accommodations based on various preferences. Once an ideal accommodation is found, users can seamlessly book their stays directly through the platform.",
+        "image": "/assets/projects/project_havre_paix.jpeg",
+        "github": "https://github.com/Diancire/havre-de-paix",
+        "tags": ["React", "MongoDB", "Sass", "Redux"],
+        "slug": "havre-de-paix"
+    },
+    {
+        "id": 1,
+        "title": "Docto-Rdv",
+        "description": "Docto-Rdv is a user-friendly appointment booking website tailored for healthcare practitioners. The platform allows users to efficiently search for doctors by specialty. Detailed profiles provide insights into each doctor’s qualifications.Users can easily view available time slots and book appointments directly online, ensuring a smooth and quick process.",
+        "image": "/assets/projects/project_docto_rdv.jpeg",
+        "github": "https://github.com/Diancire/docto-rdv",
+        "tags": ["Nextjs","TypeScript",  "Prisma", "Resend"],
+        "slug": "docto-rdv"
+    },
+    {
+        "id": 2,
+        "title": "Les Trésors Cachés de la Maison",
+        "description": "Les Trésors Cachés de la Maison is a meticulously curated blog dedicated to the art of homemade living. The blog features a wide array of content focused on natural remedies, DIY projects, and healthy living practices. It aims to inspire readers to embrace a balanced lifestyle through practical tips, detailed tutorials, and engaging articles. The blog also includes sections for seasonal tips, eco-friendly solutions, and personal anecdotes to enrich the reader’s experience.",
+        "image": "/assets/projects/project_tresors_caches.jpeg",
+        "github": "https://github.com/Diancire/les-tresors-caches-de-la-maison",
+        "tags": ["Symfony", "Twig", "Sass", "JavaScript"],
+        "slug": "les-tresors-caches"
+    },
+    {
+        "id": 3,
+        "title": "Kasa",
+        "description": "Kasa is a sophisticated platform facilitating the rental of apartments directly from property owners. As a freelance front-end developer, my responsibility was to develop a modern, user-friendly interface based on design mockups provided by the design team. The platform prioritizes ease of use, enabling potential renters to browse listings, view detailed property information.",
+        "image": "/assets/projects/project_kasa.jpeg",
+        "github": "https://github.com/Diancire/Kasa",
+        "tags": ["React", "CSS", "Node.js", "Figma"],
+        "slug": "kasa"
+    }
+]

@@ -1,6 +1,7 @@
-import About from "./_components/About";
-import Hero from "./_components/Hero";
-import Skills from "./_components/Skills";
+import About from "@/components/About";
+import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 
 export default function Home() {
@@ -12,6 +13,8 @@ export default function Home() {
       <About/>
       {/* Skills */}
       <Skills/>
+      {/* Projects */}
+      <Projects/>
     </main>
   );
 }
