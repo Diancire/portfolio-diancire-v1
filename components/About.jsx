@@ -24,7 +24,7 @@ function About() {
                 <h2 className=' mt-4'>About me</h2>
                 <h3 className=''>Web Developper</h3>
                 <p className='mb-6 text-justify'>I'm Dianciré, a passionate web developer based in Île-de-France. Having undergone training at OpenClassrooms and Doranco, I have gained experience in creating high-performance web applications. My journey has allowed me to explore various web technologies and continually enhance my skills. My objective is to become an experienced web developer and actively contribute to innovative and stimulating projects.<br/> I'm open to discussions and available to talk about potential projects or any other collaboration opportunities. Feel free to contact me.</p>
-                <button className='btn py-2'>Contact me</button>
+                <a href='#contact' className='btn py-2'>Contact me</a>
             </motion.div>
         </div>
     </section>
