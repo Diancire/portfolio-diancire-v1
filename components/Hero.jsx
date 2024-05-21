@@ -53,7 +53,7 @@ function Hero() {
                     initial="hidden" whileInView={'show'} 
                     viewport={{once: false, amount: 0.7}} 
                     className='flex max-w-max gap-x-6 items-center mb-12 mx-auto'>
-                    <button className='btn py-2'>Contact me</button>
+                    <a className='btn py-2 cursor-pointer' href="#contact">Contact me</a>
                     <a href='#' className='text-gradient py-2'>My Portfolio</a>
                 </motion.div>
                 <motion.div
@@ -67,7 +67,7 @@ function Hero() {
                     <a href="https://github.com/Diancire" className='hover:text-accent'>
                         <FaGithub size={25}/>
                     </a>
-                    <a href="" className='hover:text-accent'>
+                    <a href='mailto:diancire.d01@gmail.com' className='hover:text-accent'>
                         <CgMail size={25}/>
                     </a>
                 </motion.div>

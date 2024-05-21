@@ -21,19 +21,16 @@ function Navbar() {
         // Function to handle scrolling events
         const handleScroll = () => {
             const sections = document.querySelectorAll('section[id]');
+            let currentSection = null;
             sections.forEach((section) => {
-                // Get the bounding rectangle of the section
                 const rect = section.getBoundingClientRect();
-                // Check if the top and bottom of the section are within the viewport
-                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                    setActiveSection(section.id);
+                if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+                    currentSection = section.id;
                 }
             });
+            setActiveSection(currentSection);
         };
-        // Add a scroll event listener when the component mounts
         window.addEventListener('scroll', handleScroll);
-
-        // Clean up the event listener when the component unmounts
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -49,7 +46,7 @@ function Navbar() {
             <nav>
                 <ul className='hidden md:flex'>
                     <Link href='/'>
-                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Accueil</li>
+                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Home</li>
                     </Link>
                     <Link href='/#about'>
                         <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
@@ -60,8 +57,8 @@ function Navbar() {
                     <Link href='/#projects'>
                         <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
                     </Link>
-                    <Link href='/'>
-                        <li className='ml-10 uppercase hover:text-accent transition-all ease-in-out'>Contact</li>
+                    <Link href='/#contact'>
+                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'contact' ? 'active' : ''}`}>Contact</li>
                     </Link>
                 </ul>
                 <div 
@@ -108,8 +105,8 @@ function Navbar() {
                         <Link href='/#projects'>
                             <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
                         </Link>
-                        <Link href='/'>
-                            <li onClick={() => setNav(false)} className='py-4 uppercase hover:text-accent transition-all ease-in-out'>Contact</li>
+                        <Link href='/#contact'>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'contact' ? 'active' : ''}`}>Contact</li>
                         </Link>
                     </ul>
                     <div className='pt-36'>
@@ -121,7 +118,7 @@ function Navbar() {
                             <a href="https://github.com/Diancire" className='hover:text-accent'>
                                 <FaGithub size={25}/>
                             </a>
-                            <a href="" className='hover:text-accent'>
+                            <a href='mailto:diancire.d01@gmail.com' className='hover:text-accent'>
                                 <CgMail size={25}/>
                             </a>
                         </div>
