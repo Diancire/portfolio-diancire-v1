@@ -1,22 +1,56 @@
 "use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { FaGithub, FaLinkedinIn, FaPhone } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp, HiLocationMarker, HiMail } from 'react-icons/hi';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../app/variant';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
+  // Reference to the form element
+  const form = useRef(null);
+  // State to handle loading state
+  const [isLoading, setIsLoading] = useState(false);
+
+  
+  const sendEmail = (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+    // Send email using emailjs
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+      )
+      .then(
+        (result) => {
+          setIsLoading(false);
+          toast.success('Message sent successfully!');
+          form.current.reset();
+        },
+        (error) => {
+          setIsLoading(false);
+          toast.error('Failed to send message. Please try again.');
+        }
+      );
+  };
   return (
     <section id='contact' className='w-full pt-12 overflow-hidden'>
       <div className='max-w-[1240px] m-auto px-2 py-16 w-full'>
+        <ToastContainer />
         <div className='grid lg:grid-cols-5 gap-8'>
           {/* left */}
           <motion.div 
-            className='col-span-3 lg:col-span-2 w-full h-full rounded-xl p-4 border' variants={ fadeIn('right', 0.1) }
+            className='col-span-3 lg:col-span-2 w-full h-full rounded-xl p-4 border' 
+            variants={fadeIn('right', 0.1)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{once: false, amount:0.7}}
+            viewport={{ once: false, amount: 0.7 }}
           >
             <div className='lg:p-4 h-full '>
               <div>
@@ -25,7 +59,7 @@ function Contact() {
               <div>
                 <a href='tel:0669787563' className='flex items-center mb-4 hover:text-accent'>
                     <div className='btn mr-8'>
-                        <FaPhone/>
+                        <FaPhone />
                     </div>
                     <div>
                         <p className='text-2xl'>Phone number</p>
@@ -34,7 +68,7 @@ function Contact() {
                 </a>
                 <a href='mailto:diancire.d01@gmail.com' className='flex items-center mb-4 hover:text-accent'>
                   <div className='btn mr-8'>
-                    <HiMail/>
+                    <HiMail />
                   </div>
                   <div>
                     <p className='text-2xl'>Email</p>
@@ -43,7 +77,7 @@ function Contact() {
                 </a>
                 <a href='https://www.google.com/maps/place/%C3%8Ele-de-France/@48.6788887,1.8433252,9z/data=!3m1!4b1!4m6!3m5!1s0x47e5e1c403a68c17:0x10b82c3688b2570!8m2!3d48.8499198!4d2.6370411!16zL20vMDVxcTZt?authuser=0&entry=ttu' className='flex items-center mb-4 hover:text-accent'>
                     <div className='btn mr-8'>
-                        <HiLocationMarker/>
+                        <HiLocationMarker />
                     </div>
                     <div>
                         <p className='text-2xl'>Location</p>
@@ -78,13 +112,14 @@ function Contact() {
           </motion.div>
           {/* right */}
           <motion.div 
-            className='col-span-3 w-full h-auto rounded-xl lg:p-4 border' variants={ fadeIn('right', 0.1) }
+            className='col-span-3 w-full h-auto rounded-xl lg:p-4 border' 
+            variants={fadeIn('right', 0.1)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{once: false, amount:0.7}}
+            viewport={{ once: false, amount: 0.7 }}
           >
             <div className='p-4'>
-              <form>
+              <form ref={form} onSubmit={sendEmail}>
                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                   <div className='flex flex-col'>
                     <label className='uppercase text-sm py-2'>Name *</label>
@@ -96,9 +131,7 @@ function Contact() {
                     />
                   </div>
                   <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>
-                      Phone Number
-                    </label>
+                    <label className='uppercase text-sm py-2'>Phone Number</label>
                     <input
                       className='border-2 rounded-lg p-3 flex border-gray-300 bg-transparent'
                       type='text'
@@ -135,7 +168,7 @@ function Contact() {
                 </div>
                 <div className='flex justify-center'>
                   <button className='p-4 text-gray-100 mt-4 btn'>
-                    Send Message
+                    {isLoading ? 'In progress...' : 'Send Message'}
                   </button>
                 </div>
               </form>
@@ -151,7 +184,7 @@ function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Contact;
