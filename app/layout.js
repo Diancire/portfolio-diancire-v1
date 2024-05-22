@@ -1,6 +1,7 @@
 import { Oswald, Permanent_Marker } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 
 export const oswald = Oswald({ 
@@ -9,10 +10,10 @@ export const oswald = Oswald({
   variable: "--font-oswald",
 });
 
-export const sedgwick = Permanent_Marker({ 
+export const permanent_marker = Permanent_Marker({ 
   subsets: ["latin"],
   display: 'swap',
-  variable: "--font-sedgwick",
+  variable: "--font-permanent_marker",
   weight: ['400']
 });
 
@@ -23,10 +24,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${oswald.variable} ${sedgwick.variable}`}>
+    <html lang="en" className={`${oswald.variable} ${permanent_marker.variable}`}>
       <body style={{backgroundImage: "url('/site-bg.jpg')"}} className="bg-no-repeat bg-cover">
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

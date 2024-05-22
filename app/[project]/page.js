@@ -61,18 +61,16 @@ export default function Project() {
         <div className='mb-8'>
           <a
             href={projectInfo.github}
-            className='px-8 mr-8 btn py-2'
+            className='px-8 btn py-2'
           >
             Code
           </a>
-          {projectInfo.demo && (
-            <a
-              href={projectInfo.demo}
-              className='px-8 text-gradient py-2'
-            >
-              Demo
-            </a>
-          )}
+          <a
+            href={projectInfo.url}
+            className='px-8 text-gradient py-2'
+          >
+            Demo
+          </a>
         </div>
         <Link href='/#projects' className='inline-block btn'>
           <FaArrowLeft className='cursor-pointer' />
