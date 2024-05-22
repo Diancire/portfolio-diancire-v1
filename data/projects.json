@@ -24,7 +24,8 @@
         "image": "/assets/projects/project_tresors_caches.jpeg",
         "github": "https://github.com/Diancire/les-tresors-caches-de-la-maison",
         "tags": ["Symfony", "Twig", "Sass", "JavaScript"],
-        "slug": "les-tresors-caches"
+        "slug": "les-tresors-caches",
+        "url":"https://lestresorscachesdelamaison.diancirediallo.fr"
     },
     {
         "id": 3,
@@ -33,6 +34,7 @@
         "image": "/assets/projects/project_kasa.jpeg",
         "github": "https://github.com/Diancire/Kasa",
         "tags": ["React", "CSS", "Node.js", "Figma"],
-        "slug": "kasa"
+        "slug": "kasa",
+        "url":"https://kasa-diancire.vercel.app/"
     }
 ]
