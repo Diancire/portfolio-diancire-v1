@@ -1,0 +1,47 @@
+{
+  "navbar":{
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "slogan": "J'aime coder et donner vie aux idées",
+    "connect": "Connectons-nous",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "hero": {
+    "title": "Dianciré",
+    "subtitle": "Je suis une",
+    "slogan": "J'aime coder et donner vie aux idées",
+    "contact_button": "Me contacter",
+    "portfolio_button": "Mon Portfolio"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "role": "Développeuse web",
+    "description": "Je suis Dianciré, une développeuse web passionnée basée en Île-de-France. Ayant suivi une formation chez OpenClassrooms et Doranco, j'ai acquis de l'expérience dans la création d'applications web performantes. Mon parcours m'a permis d'explorer diverses technologies web et d'améliorer continuellement mes compétences. Mon objectif est de devenir une développeuse web expérimentée et de contribuer activement à des projets innovants et stimulants. Je suis ouverte aux discussions et disponible pour discuter de projets potentiels ou de toute autre opportunité de collaboration. N'hésitez pas à me contacter.",
+    "contact_button": "Me contacter"
+  },
+  "skills": {
+    "title": "Compétences & Technologies"
+  },
+  "projects": {
+    "title": "Projets",
+    "more_info": "Plus d'infos"
+  },
+  "contact": {
+    "title": "Contact",
+    "phone_number": "Numéro de téléphone",
+    "email": "Email",
+    "location": "Adresse",
+    "name": "Nom",
+    "subject": "Sujet",
+    "social_media": "Mes réseaux sociaux",
+    "follow_me": "Suivez-moi",
+    "send_message": "Envoyer le message",
+    "in_progress": "En cours...",
+    "message_success": "Message envoyé avec succès!",
+    "message_failure": "Échec de l'envoi du message. Veuillez réessayer."
+  }
+}

@@ -1,15 +1,15 @@
 'use client'
 import { useMemo } from 'react';
 import { useParams } from 'next/navigation';
-import projectsData from '@/data/projects.json';
+import projectsData from '../../data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import { FaArrowLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variant';
+import { fadeIn } from '../../variant';
 
-export default function Project() {
+export default function Project({dict = {}}) {
   const { project } = useParams();
 
   // Use memoization to prevent unnecessary computations
@@ -32,7 +32,7 @@ export default function Project() {
           className='w-full h-full rounded-lg'
           width={500}
           height={500}
-          src={projectInfo.image}
+          src={require(`../../../public/assets/projects/${projectInfo.image}`)}
           alt={projectInfo.title}
           priority
         />

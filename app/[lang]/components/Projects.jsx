@@ -1,12 +1,15 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import projects from '../data/projects'
+import projects from '../../data/projects'
 import Link from 'next/link'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../app/variant';
+import { fadeIn } from '../../variant';
+import { useParams } from 'next/navigation'; 
 
-function Projects() {
+function Projects({dict = {}}) {
+  const { lang } = useParams();
+
   return (
     <div id='projects' className='w-full overflow-hidden pt-24'>
         <div className='max-w-[1240px] mx-auto px-2 py-16'>
@@ -16,7 +19,7 @@ function Projects() {
               whileInView={"show"}
               viewport={{once: false, amount:0.7}}
             >
-              <h2>Projects</h2>
+              <h2>{dict.projects.title}</h2>
             </motion.div>
             <div className='grid md:grid-cols-2 gap-8'>
               {projects.map((item, index) => (
@@ -27,7 +30,7 @@ function Projects() {
                   viewport={{once: false, amount:0.7}}
                 >
                     <Image 
-                      src={item.image} 
+                      src={require(`../../../public/assets/projects/${item.image}`)}
                       alt={item.title}
                       width={1000}
                       height={1000}
@@ -43,8 +46,8 @@ function Projects() {
                               </span>
                             ))}
                         </p>
-                        <Link href={`/${item.slug}`} className='flex justify-center'>
-                          <p className='text-center py-3 rounded-lg bg-white font-bold cursor-pointer text-black w-44'>More Info</p>
+                        <Link href={`/${lang}/${item.slug}`} className='flex justify-center'>
+                          <p className='text-center py-3 rounded-lg bg-white font-bold cursor-pointer text-black w-44'>{dict.projects.more_info}</p>
                         </Link>
                     </div>
                 </motion.div>

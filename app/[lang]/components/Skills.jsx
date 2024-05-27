@@ -1,15 +1,15 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import skills from '../data/skills'
+import skills from '../../data/skills'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css';
 import {Autoplay} from 'swiper/modules'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../app/variant';
+import { fadeIn } from '../../variant';
 
 
-function Skills() {
+function Skills({dict = {}}) {
   return (
     <section id='skills' className='items-center justify-center overflow-hidden pt-24'>
         <div className='flex flex-col gap-20 text-center items-center mb-20'>
@@ -20,7 +20,7 @@ function Skills() {
                 viewport={{once: false, amount:0.7}}
                 className='flex flex-col items-center gap-4'
             >
-                <h2>Skills & Technologies</h2>
+                <h2>{dict.skills.title}</h2>
             </motion.div>
             <Swiper
                 slidesPerView={5}
@@ -36,7 +36,7 @@ function Skills() {
                 {skills.map((item, index) => (
                     <SwiperSlide key={index} className='py-2 w-0'>
                         <Image
-                            src={item.img}
+                            src={require(`../../../public/assets/skills/${item.img}`)}
                             alt={item.name}
                             width={80}
                             height={80}

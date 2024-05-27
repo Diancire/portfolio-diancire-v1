@@ -2,51 +2,51 @@
     {
         "id": "1",
         "name": "JavaScript",
-        "img": "/assets/skills/javascript.svg"
+        "img": "javascript.svg"
     },
     {
         "id": "2",
         "name": "React",
-        "img": "/assets/skills/react.svg"
+        "img": "react.svg"
     },
     {
         "id": "3",
         "name": "Next.JS",
-        "img": "/assets/skills/next-js.svg"
+        "img": "next-js.svg"
     },
     {
         "id": "4",
         "name": "NodeJs",
-        "img": "/assets/skills/node-js.svg"
+        "img": "node-js.svg"
     },
     {
         "id": "5",
         "name": "MongoDB",
-        "img": "/assets/skills/mongodb.svg"
+        "img": "mongodb.svg"
     },
     {
         "id": "6",
         "name": "PHP",
-        "img": "/assets/skills/php.svg"
+        "img": "php.svg"
     },
     {
         "id": "7",
         "name": "Symfony",
-        "img": "/assets/skills/symfony.svg"
+        "img": "symfony.svg"
     },
     {
         "id": "8",
         "name": "Sass",
-        "img": "/assets/skills/sass.svg"
+        "img": "sass.svg"
     },
     {
         "id": "9",
         "name": "TailwindCSS",
-        "img": "/assets/skills/tailwind-css.svg"
+        "img": "tailwind-css.svg"
     },
     {
         "id": "10",
         "name": "Figma",
-        "img": "/assets/skills/figma.svg"
+        "img": "figma.svg"
     }
 ]

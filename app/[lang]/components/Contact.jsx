@@ -5,11 +5,11 @@ import { FaGithub, FaLinkedinIn, FaPhone } from 'react-icons/fa';
 import { HiOutlineChevronDoubleUp, HiLocationMarker, HiMail } from 'react-icons/hi';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { fadeIn } from '../app/variant';
+import { fadeIn } from '../../variant';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Contact() {
+function Contact({dict = {}}) {
   // Reference to the form element
   const form = useRef(null);
   // State to handle loading state
@@ -54,7 +54,7 @@ function Contact() {
           >
             <div className='lg:p-4 h-full '>
               <div>
-                <h2 className='py-2'>Contact</h2>
+                <h2 className='py-2'>{dict.contact.title}</h2>
               </div>
               <div>
                 <a href='tel:0669787563' className='flex items-center mb-4 hover:text-accent'>
@@ -62,7 +62,7 @@ function Contact() {
                         <FaPhone />
                     </div>
                     <div>
-                        <p className='text-2xl'>Phone number</p>
+                        <p className='text-2xl'>{dict.contact.phone_number}</p>
                         <p>0669787563</p>
                     </div>
                 </a>
@@ -71,7 +71,7 @@ function Contact() {
                     <HiMail />
                   </div>
                   <div>
-                    <p className='text-2xl'>Email</p>
+                    <p className='text-2xl'>{dict.contact.email}</p>
                     <p>diancire.d01@gmail.com</p>
                   </div>
                 </a>
@@ -80,13 +80,13 @@ function Contact() {
                         <HiLocationMarker />
                     </div>
                     <div>
-                        <p className='text-2xl'>Location</p>
+                        <p className='text-2xl'>{dict.contact.location}</p>
                         <p>Île-de-France, France</p>
                     </div>
                 </a>
               </div>
               <div className='pt-10'>
-                <h3 className='text-2xl uppercase'>My social media | <span className='text-gradient'>Follow me</span></h3>
+                <h3 className='text-2xl uppercase'>{dict.contact.social_media} | <span className='text-gradient'>{dict.contact.follow_me}</span></h3>
                 <div className='flex items-center py-4'>
                   <a
                     href='https://www.linkedin.com/in/diancir%C3%A9-diallo-b1888a21b/'
@@ -122,7 +122,7 @@ function Contact() {
               <form ref={form} onSubmit={sendEmail}>
                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                   <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>Name *</label>
+                    <label className='uppercase text-sm py-2'>{dict.contact.name} *</label>
                     <input
                       className='border-2 rounded-lg p-3 flex border-gray-300 bg-transparent'
                       type='text'
@@ -131,7 +131,7 @@ function Contact() {
                     />
                   </div>
                   <div className='flex flex-col'>
-                    <label className='uppercase text-sm py-2'>Phone Number</label>
+                    <label className='uppercase text-sm py-2'>{dict.contact.phone_number}</label>
                     <input
                       className='border-2 rounded-lg p-3 flex border-gray-300 bg-transparent'
                       type='text'
@@ -140,7 +140,7 @@ function Contact() {
                   </div>
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Email *</label>
+                  <label className='uppercase text-sm py-2'>{dict.contact.email} *</label>
                   <input
                     className='border-2 rounded-lg p-3 flex border-gray-300 bg-transparent'
                     type='email'
@@ -149,7 +149,7 @@ function Contact() {
                   />
                 </div>
                 <div className='flex flex-col py-2'>
-                  <label className='uppercase text-sm py-2'>Subject *</label>
+                  <label className='uppercase text-sm py-2'>{dict.contact.subject} *</label>
                   <input
                     className='border-2 rounded-lg p-3 flex border-gray-300 bg-transparent'
                     type='text'
@@ -168,7 +168,7 @@ function Contact() {
                 </div>
                 <div className='flex justify-center'>
                   <button className='p-4 text-gray-100 mt-4 btn'>
-                    {isLoading ? 'In progress...' : 'Send Message'}
+                    {isLoading ? dict.contact.in_progress : dict.contact.send_message}
                   </button>
                 </div>
               </form>

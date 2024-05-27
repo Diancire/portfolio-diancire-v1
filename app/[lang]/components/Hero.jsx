@@ -4,9 +4,9 @@ import { TypeAnimation } from 'react-type-animation';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { CgMail } from "react-icons/cg"
 import { motion } from 'framer-motion';
-import { fadeIn } from '../app/variant';
+import { fadeIn } from '../../variant';
 
-function Hero() {
+function Hero({dict = {}}) {
   return (
     <section id='home' className='w-full h-screen text-center'>
         <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
@@ -17,7 +17,7 @@ function Hero() {
                     viewport={{once: false, amount:0.2}}
                     className='uppercase text-[40px] md:text-[56px] lg:text-[80px] leading-[0.8]'
                 >
-                    Dianciré
+                    {dict.hero.title}
                 </motion.h1>
                 <motion.div
                     variants={fadeIn('up', 0.2)} 
@@ -46,15 +46,15 @@ function Hero() {
                     initial="hidden" whileInView={'show'} 
                     viewport={{once: false, amount: 0.7}} 
                     className='text-center text-[20px] md:text-[25px] mb-8 mx-auto break-words'>
-                    I love coding and bringing ideas to life
+                    {dict.hero.slogan}
                 </motion.p>
                 <motion.div 
                     variants={fadeIn('up', 0.3)} 
                     initial="hidden" whileInView={'show'} 
                     viewport={{once: false, amount: 0.7}} 
                     className='flex max-w-max gap-x-6 items-center mb-12 mx-auto'>
-                    <a className='btn py-2 cursor-pointer' href="#contact">Contact me</a>
-                    <a href='#' className='text-gradient py-2'>My Portfolio</a>
+                    <a className='btn py-2 cursor-pointer' href="#contact">{dict.hero.contact_button}</a>
+                    <a href='#' className='text-gradient py-2'>{dict.hero.portfolio_button}</a>
                 </motion.div>
                 <motion.div
                     variants={fadeIn('up', 0.3)} 
