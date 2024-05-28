@@ -1,0 +1,64 @@
+{
+  "navbar":{
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "slogan": "I love coding and bringing ideas to life",
+    "connect": "Let's connect",
+    "en": "EN",
+    "fr": "FR"
+  },
+  "hero": {
+    "title": "Dianciré",
+    "subtitle": "I am a",
+    "slogan": "I love coding and bringing ideas to life",
+    "contact_button": "Contact me",
+    "portfolio_button": "My Portfolio"
+  },
+  "about": {
+    "title": "About me",
+    "role": "Web Developer",
+    "description": "I'm Dianciré, a passionate web developer based in Île-de-France. Having undergone training at OpenClassrooms and Doranco, I have gained experience in creating high-performance web applications. My journey has allowed me to explore various web technologies and continually enhance my skills. My objective is to become an experienced web developer and actively contribute to innovative and stimulating projects. I'm open to discussions and available to talk about potential projects or any other collaboration opportunities. Feel free to contact me.",
+    "contact_button": "Contact me"
+  },
+  "skills": {
+    "title": "Skills & Technologies"
+  },
+  "projects": {
+    "title": "Projects",
+    "more_info": "More Info",
+    "havre-de-paix": {
+      "title": "Havre de Paix",
+      "description": "Havre de Paix is a comprehensive platform designed for individuals seeking to rent houses, apartments, and rooms for serene and pleasant stays. The platform offers a robust search functionality allowing users to filter accommodations based on various preferences. Once an ideal accommodation is found, users can seamlessly book their stays directly through the platform."
+    },
+    "docto-rdv": {
+      "title": "Docto-Rdv",
+      "description": "Docto-Rdv is a medical booking website. The platform allows users to efficiently search for doctors by specialty. Detailed profiles provide information about the qualifications of each doctor. Users can easily check available time slots and schedule appointments directly online, ensuring a smooth and fast process."
+    },
+    "les-tresors-caches": {
+      "title": "Les Trésors Cachés de la Maison",
+      "description": "Les Trésors Cachés de la Maison is a blog dedicated to the art of homemade living. The blog offers a wide variety of content focused on natural remedies and healthy living practices. It aims to inspire readers to adopt a balanced lifestyle through practical advice and detailed tutorials."
+    },
+    "kasa": {
+      "title": "Kasa",
+      "description": "Kasa is a sophisticated platform facilitating apartment rentals directly from owners. As a freelance front-end developer, my responsibility was to develop a modern and user-friendly interface based on the design mockups provided by the design team."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "phone_number": "Phone Number",
+    "email": "Email",
+    "location": "Location",
+    "name": "Name",
+    "subject": "Subject",
+    "social_media": "My social media",
+    "follow_me": "Follow me",
+    "send_message": "Send Message",
+    "in_progress": "In progress..."
+  },
+  "footer": {
+    "all_rights_reserved_by": "All rights reserved by"
+  }
+}

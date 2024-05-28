@@ -1,23 +1,14 @@
-'use client'
-import { useMemo } from 'react';
-import { useParams } from 'next/navigation';
-import projectsData from '@/data/projects.json';
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import { FaArrowLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variant';
+import { fadeIn } from '../../../../variant';
 
-export default function Project() {
-  const { project } = useParams();
-
-  // Use memoization to prevent unnecessary computations
-  const projectInfo = useMemo(() => projectsData.find(p => p.slug === project), [project]);
-
-  if (!projectInfo) {
-    return <div className="text-center text-red-500">Project not found</div>;
-  }
+export default function ProjectDetails({ dict, projectInfo, lang }) {
+  
+  const { description } = dict.projects[projectInfo.slug];
 
   return (
     <div className='w-full md:min-h-screen p-4 py-20 overflow-hidden md:flex md:flex-col lg:flex-row lg:items-center'>
@@ -32,7 +23,7 @@ export default function Project() {
           className='w-full h-full rounded-lg'
           width={500}
           height={500}
-          src={projectInfo.image}
+          src={require(`../../../../../public/assets/projects/${projectInfo.image}`)}
           alt={projectInfo.title}
           priority
         />
@@ -56,7 +47,7 @@ export default function Project() {
           </div>
         </div>
         <p className='text-justify mb-6'>
-          {projectInfo.description}
+          {description}
         </p>
         <div className='mb-8'>
           <a
@@ -65,14 +56,16 @@ export default function Project() {
           >
             Code
           </a>
-          <a
-            href={projectInfo.url}
-            className='px-8 text-gradient py-2'
-          >
-            Demo
-          </a>
+          {projectInfo.url && (
+            <a
+              href={projectInfo.url}
+              className='px-8 text-gradient py-2'
+            >
+              Demo
+            </a>
+          )}
         </div>
-        <Link href='/#projects' className='inline-block btn'>
+        <Link href={`/${lang}/#projects`} className='inline-block btn'>
           <FaArrowLeft className='cursor-pointer' />
         </Link>
       </motion.div>

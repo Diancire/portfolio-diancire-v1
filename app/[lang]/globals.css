@@ -56,7 +56,7 @@
     @apply bg-gradient-to-r text-[25px] text-transparent bg-clip-text from-[#22c1c3] to-[#fdbb2d] font-bold hover:from-[#fdbb2d] hover:to-[#22c1c3];
   }
   .btn {
-    @apply rounded-lg text-white p-4
+    @apply rounded-lg text-primary p-4 font-bold
   }
 }
 

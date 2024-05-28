@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { CgMenuRight, CgClose, CgMail } from "react-icons/cg"
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
-function Navbar() {
+function Navbar({dict = {}, lang }) {
     // State variable to manage the visibility of the mobile menu
     const [nav, setNav] = useState(false);
 
@@ -39,27 +39,39 @@ function Navbar() {
     <header className='fixed w-full h-20 shadow z-[100]'>
         {/* Container for the navigation bar */}
         <div className='flex justify-between items-center w-full h-full px-4 2xl:px-16 bg-primary'>
-            <Link href='/'>
+            <Link href={`/${lang}/`}>
                 <span className='font-logo text-4xl'>DD</span>
             </Link>
             {/* Navigation links and menu button */}
             <nav>
-                <ul className='hidden md:flex'>
-                    <Link href='/'>
-                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Home</li>
+                <ul className='hidden md:flex items-center'>
+                    <Link href={`/${lang}/`}>
+                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>{dict.navbar.home}</li>
                     </Link>
-                    <Link href='/#about'>
-                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
+                    <Link href={`/${lang}/#about`}>
+                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>{dict.navbar.about}</li>
                     </Link>
-                    <Link href='/#skills'>
-                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'skills' ? 'active' : ''}`}>Skills</li>
+                    <Link href={`/${lang}/#skills`}>
+                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'skills' ? 'active' : ''}`}>{dict.navbar.skills}</li>
                     </Link>
-                    <Link href='/#projects'>
-                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
+                    <Link href={`/${lang}/#projects`}>
+                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'projects' ? 'active' : ''}`}>{dict.navbar.projects}</li>
                     </Link>
-                    <Link href='/#contact'>
-                        <li className={`ml-10 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'contact' ? 'active' : ''}`}>Contact</li>
+                    <Link href={`/${lang}/#projects`}>
+                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'contact' ? 'active' : ''}`}>{dict.navbar.contact}</li>
                     </Link>
+                    <div className="flex items-end ml-10 border p-2 rounded-md">
+                        <Link href="/en">
+                        <div className={`pr-2 hover:text-accent ${lang === "en" ? "text-base text-gradient" : "text-sm"}`}>
+                            EN
+                        </div>
+                        </Link>
+                        <Link href="/fr">
+                        <div className={` hover:text-accent ${lang === "fr" ? "text-base text-gradient" : "text-sm"}`}>
+                            FR
+                        </div>
+                        </Link>
+                    </div>
                 </ul>
                 <div 
                     className='md:hidden'
@@ -78,7 +90,7 @@ function Navbar() {
             >
                 <div>
                     <div className='flex w-full items-center justify-between'>
-                        <Link href='/'>
+                        <Link href={`/${lang}/`}>
                             <span className='font-logo text-4xl'>DD</span>
                         </Link>
                         <CgClose 
@@ -88,29 +100,29 @@ function Navbar() {
                         />
                     </div>
                     <div className='my-4'>
-                        <p className='w-[85%] md:w-[90%] py-4'>I love coding and bringing ideas to life</p>
+                        <p className='w-[85%] md:w-[90%] py-4'>{dict.navbar.slogan}</p>
                     </div>
                 </div>
                 <nav className='py-4 flex flex-col'>
                     <ul>
-                        <Link href='/'>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>Home</li>
+                        <Link href={`/${lang}/`}>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>{dict.navbar.home}</li>
                         </Link>
-                        <Link href='/#about'>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>About</li>
+                        <Link href={`/${lang}/#about`}>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>{dict.navbar.about}</li>
                         </Link>
-                        <Link href='/#skills'>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>Skills</li>
+                        <Link href={`/${lang}/#skills`}>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>{dict.navbar.skills}</li>
                         </Link>
-                        <Link href='/#projects'>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>Projects</li>
+                        <Link href={`/${lang}/#projects`}>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>{dict.navbar.projects}</li>
                         </Link>
                         <Link href='/#contact'>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'contact' ? 'active' : ''}`}>Contact</li>
+                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'contact' ? 'active' : ''}`}>{dict.navbar.contact}</li>
                         </Link>
                     </ul>
-                    <div className='pt-36'>
-                        <p className='uppercase tracking-widest'>Let's connect</p>
+                    <div className='pt-8'>
+                        <p className='uppercase tracking-widest'>{dict.navbar.connect}</p>
                         <div className='flex items-center my-4 gap-6'>
                             <a href="https://www.linkedin.com/in/diancir%C3%A9-diallo-b1888a21b/" className='hover:text-accent'>
                                 <FaLinkedinIn size={25}/>
@@ -122,6 +134,18 @@ function Navbar() {
                                 <CgMail size={25}/>
                             </a>
                         </div>
+                    </div>
+                    <div className="flex items-end border p-4 rounded-md w-20">
+                        <Link href="/en">
+                        <div className={`pr-4 ${lang === "en" ? "text-base text-gradient" : "text-sm"}`}>
+                            EN
+                        </div>
+                        </Link>
+                        <Link href="/fr">
+                        <div className={`${lang === "fr" ? "text-base text-gradient" : "text-sm"}`}>
+                            FR
+                        </div>
+                        </Link>
                     </div>
                 </nav>
             </div>
