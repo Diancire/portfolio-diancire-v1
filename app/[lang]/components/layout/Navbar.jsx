@@ -39,25 +39,25 @@ function Navbar({dict = {}, lang }) {
     <header className='fixed w-full h-20 shadow z-[100]'>
         {/* Container for the navigation bar */}
         <div className='flex justify-between items-center w-full h-full px-4 2xl:px-16 bg-primary'>
-            <Link href='/'>
+            <Link href={`/${lang}/`}>
                 <span className='font-logo text-4xl'>DD</span>
             </Link>
             {/* Navigation links and menu button */}
             <nav>
                 <ul className='hidden md:flex items-center'>
-                    <Link href='/'>
+                    <Link href={`/${lang}/`}>
                         <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>{dict.navbar.home}</li>
                     </Link>
-                    <Link href='/#about'>
+                    <Link href={`/${lang}/#about`}>
                         <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>{dict.navbar.about}</li>
                     </Link>
-                    <Link href='/#skills'>
+                    <Link href={`/${lang}/#skills`}>
                         <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'skills' ? 'active' : ''}`}>{dict.navbar.skills}</li>
                     </Link>
-                    <Link href='/#projects'>
+                    <Link href={`/${lang}/#projects`}>
                         <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'projects' ? 'active' : ''}`}>{dict.navbar.projects}</li>
                     </Link>
-                    <Link href='/#contact'>
+                    <Link href={`/${lang}/#projects`}>
                         <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'contact' ? 'active' : ''}`}>{dict.navbar.contact}</li>
                     </Link>
                     <div className="flex items-end ml-10 border p-2 rounded-md">
@@ -90,7 +90,7 @@ function Navbar({dict = {}, lang }) {
             >
                 <div>
                     <div className='flex w-full items-center justify-between'>
-                        <Link href='/'>
+                        <Link href={`/${lang}/`}>
                             <span className='font-logo text-4xl'>DD</span>
                         </Link>
                         <CgClose 
@@ -105,23 +105,23 @@ function Navbar({dict = {}, lang }) {
                 </div>
                 <nav className='py-4 flex flex-col'>
                     <ul>
-                        <Link href='/'>
+                        <Link href={`/${lang}/`}>
                             <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>{dict.navbar.home}</li>
                         </Link>
-                        <Link href='/#about'>
+                        <Link href={`/${lang}/#about`}>
                             <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>{dict.navbar.about}</li>
                         </Link>
-                        <Link href='/#skills'>
+                        <Link href={`/${lang}/#skills`}>
                             <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>{dict.navbar.skills}</li>
                         </Link>
-                        <Link href='/#projects'>
+                        <Link href={`/${lang}/#projects`}>
                             <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>{dict.navbar.projects}</li>
                         </Link>
                         <Link href='/#contact'>
                             <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'contact' ? 'active' : ''}`}>{dict.navbar.contact}</li>
                         </Link>
                     </ul>
-                    <div className='pt-36'>
+                    <div className='pt-8'>
                         <p className='uppercase tracking-widest'>{dict.navbar.connect}</p>
                         <div className='flex items-center my-4 gap-6'>
                             <a href="https://www.linkedin.com/in/diancir%C3%A9-diallo-b1888a21b/" className='hover:text-accent'>
@@ -135,9 +135,9 @@ function Navbar({dict = {}, lang }) {
                             </a>
                         </div>
                     </div>
-                    <div className="flex items-end border p-2 rounded-md w-14">
+                    <div className="flex items-end border p-4 rounded-md w-20">
                         <Link href="/en">
-                        <div className={`pr-2 ${lang === "en" ? "text-base text-gradient" : "text-sm"}`}>
+                        <div className={`pr-4 ${lang === "en" ? "text-base text-gradient" : "text-sm"}`}>
                             EN
                         </div>
                         </Link>

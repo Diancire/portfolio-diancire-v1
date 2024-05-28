@@ -1,12 +1,12 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import skills from '../../data/skills'
+import skills from '../../../data/skills.json'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css';
 import {Autoplay} from 'swiper/modules'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../../variant';
+import { fadeIn } from '../../../variant';
 
 
 function Skills({dict = {}}) {
@@ -36,7 +36,7 @@ function Skills({dict = {}}) {
                 {skills.map((item, index) => (
                     <SwiperSlide key={index} className='py-2 w-0'>
                         <Image
-                            src={require(`../../../public/assets/skills/${item.img}`)}
+                            src={require(`../../../../public/assets/skills/${item.img}`)}
                             alt={item.name}
                             width={80}
                             height={80}

@@ -28,7 +28,23 @@
   },
   "projects": {
     "title": "Projets",
-    "more_info": "Plus d'infos"
+    "more_info": "Plus d'infos",
+    "havre-de-paix": {
+      "title": "Havre de Paix",
+      "description": "Havre de Paix est une plateforme complète conçue pour les personnes cherchant à louer des maisons, des appartements et des chambres pour des séjours sereins et agréables. La plateforme offre une fonctionnalité de recherche avancée permettant aux utilisateurs de filtrer les hébergements en fonction de diverses préférences. Une fois l'hébergement idéal trouvé, les utilisateurs peuvent réserver leurs séjours directement via la plateforme."
+    },
+    "docto-rdv": {
+      "title": "Docto-Rdv",
+      "description": "Docto-Rdv est un site de réservation médicale. La plateforme permet aux utilisateurs de rechercher efficacement des médecins par spécialité. Des profils détaillés fournissent des informations sur les qualifications de chaque médecin. Les utilisateurs peuvent facilement consulter les créneaux horaires disponibles et prendre rendez-vous directement en ligne, garantissant un processus fluide et rapide."
+    },
+    "les-tresors-caches": {
+      "title": "Les Trésors Cachés de la Maison",
+      "description": "Les Trésors Cachés de la Maison est un blog dédié à l'art de vivre fait maison. Le blog propose une grande variété de contenus axés sur les remèdes naturels et les pratiques de vie saine. Il vise à inspirer les lecteurs à adopter un mode de vie équilibré grâce à des conseils pratiques et des tutoriels détaillés."
+    },
+    "kasa": {
+      "title": "Kasa",
+      "description": "Kasa est une plateforme sophistiquée facilitant la location d'appartements directement auprès des propriétaires. En tant que développeur front-end freelance, ma responsabilité était de développer une interface moderne et conviviale basée sur les maquettes de conception fournies par l'équipe de design."
+    }
   },
   "contact": {
     "title": "Contact",
@@ -40,8 +56,10 @@
     "social_media": "Mes réseaux sociaux",
     "follow_me": "Suivez-moi",
     "send_message": "Envoyer le message",
-    "in_progress": "En cours...",
-    "message_success": "Message envoyé avec succès!",
-    "message_failure": "Échec de l'envoi du message. Veuillez réessayer."
+    "in_progress": "En cours..."
+  },
+  "footer": {
+    "all_rights_reserved_by": "Tous droits réservés par",
+    "diancire": "Dianciré"
   }
 }

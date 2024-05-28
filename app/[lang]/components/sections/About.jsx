@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion';
-import { fadeIn } from '../../variant';
-import imageAbout from '../../../public/assets/about.jpg'
+import { fadeIn } from '../../../variant';
+import imageAbout from '../../../../public/assets/about.jpg'
 import Image from 'next/image';
 
 function About({dict = {}}) {

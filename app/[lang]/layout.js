@@ -1,6 +1,6 @@
 import { Oswald, Permanent_Marker } from "next/font/google";
 import "./globals.css";
-import MainLayout from "./components/Main-Layout";
+import MainLayout from "./components/layout/Main-Layout";
 import { getDictionary } from "./dictionaries";
 import site_bg from '../../public/site-bg.jpg'
 
@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 export default async function RootLayout({ children, params }) {
   const { lang } = params;
   const dict = await getDictionary(lang);
-  console.log("layout lang", lang);
+  
   return (
     <html lang={lang} className={`${oswald.variable} ${permanent_marker.variable}`}>
       <body style={{ backgroundImage: `url(${site_bg.src})`}} className="bg-no-repeat bg-cover">
