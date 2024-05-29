@@ -1,6 +1,8 @@
 import projectsData from '../../data/projects';
 import { getDictionary } from '../dictionaries';
-import ProjectDetails from '../components/sections/projects/ProjectDetails';
+import dynamic from 'next/dynamic';
+
+const ProjectDetails = dynamic(()=>import('../components/sections/projects/ProjectDetails'))
 
 export default async function ProjectPage({ params }) {
   const { lang, project } = params;

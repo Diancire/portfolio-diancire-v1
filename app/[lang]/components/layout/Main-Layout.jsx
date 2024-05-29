@@ -1,6 +1,8 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import dynamic from 'next/dynamic';
+
+const Navbar = dynamic(()=>import('./Navbar'))
+const Footer = dynamic(()=>import('./Footer'))
 
 export default function MainLayout({ children, dict, lang }) {
     return (

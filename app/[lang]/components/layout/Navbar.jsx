@@ -45,33 +45,29 @@ function Navbar({dict = {}, lang }) {
             {/* Navigation links and menu button */}
             <nav>
                 <ul className='hidden md:flex items-center'>
-                    <Link href={`/${lang}/`}>
-                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>{dict.navbar.home}</li>
-                    </Link>
-                    <Link href={`/${lang}/#about`}>
-                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>{dict.navbar.about}</li>
-                    </Link>
-                    <Link href={`/${lang}/#skills`}>
-                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'skills' ? 'active' : ''}`}>{dict.navbar.skills}</li>
-                    </Link>
-                    <Link href={`/${lang}/#projects`}>
-                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'projects' ? 'active' : ''}`}>{dict.navbar.projects}</li>
-                    </Link>
-                    <Link href={`/${lang}/#projects`}>
-                        <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out  ${activeSection === 'contact' ? 'active' : ''}`}>{dict.navbar.contact}</li>
-                    </Link>
-                    <div className="flex items-end ml-10 border p-2 rounded-md">
+                    <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>
+                        <Link href={`/${lang}/`}>{dict.navbar.home}</Link>
+                    </li>
+                    <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>
+                        <Link href={`/${lang}/#about`}>{dict.navbar.about}</Link>
+                    </li>
+                    <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>
+                        <Link href={`/${lang}/#skills`}>{dict.navbar.skills}</Link>
+                    </li>
+                    <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>
+                        <Link href={`/${lang}/#projects`}>{dict.navbar.projects}</Link>
+                    </li>
+                    <li className={`pl-6 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'contact' ? 'active' : ''}`}>
+                        <Link href={`/${lang}/#contact`}>{dict.navbar.contact}</Link>
+                    </li>
+                    <li className="flex items-end ml-10 border p-2 rounded-md">
                         <Link href="/en">
-                        <div className={`pr-2 hover:text-accent ${lang === "en" ? "text-base text-gradient" : "text-sm"}`}>
-                            EN
-                        </div>
+                            <div className={`pr-2 hover:text-accent ${lang === "en" ? "text-base text-gradient" : "text-sm"}`}>EN</div>
                         </Link>
                         <Link href="/fr">
-                        <div className={` hover:text-accent ${lang === "fr" ? "text-base text-gradient" : "text-sm"}`}>
-                            FR
-                        </div>
+                            <div className={`hover:text-accent ${lang === "fr" ? "text-base text-gradient" : "text-sm"}`}>FR</div>
                         </Link>
-                    </div>
+                    </li>
                 </ul>
                 <div 
                     className='md:hidden'
@@ -97,6 +93,7 @@ function Navbar({dict = {}, lang }) {
                             size={25}
                             onClick={handleNav}
                             className='hover:text-accent'
+                            aria-label="Close Menu"
                         />
                     </div>
                     <div className='my-4'>
@@ -105,32 +102,32 @@ function Navbar({dict = {}, lang }) {
                 </div>
                 <nav className='py-4 flex flex-col'>
                     <ul>
-                        <Link href={`/${lang}/`}>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`}>{dict.navbar.home}</li>
-                        </Link>
-                        <Link href={`/${lang}/#about`}>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`}>{dict.navbar.about}</li>
-                        </Link>
-                        <Link href={`/${lang}/#skills`}>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`}>{dict.navbar.skills}</li>
-                        </Link>
-                        <Link href={`/${lang}/#projects`}>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`}>{dict.navbar.projects}</li>
-                        </Link>
-                        <Link href='/#contact'>
-                            <li onClick={() => setNav(false)} className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'contact' ? 'active' : ''}`}>{dict.navbar.contact}</li>
-                        </Link>
+                        <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'home' ? 'active' : ''}`} onClick={() => setNav(false)}>
+                            <Link href={`/${lang}/`}>{dict.navbar.home}</Link>
+                        </li>
+                        <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'about' ? 'active' : ''}`} onClick={() => setNav(false)}>
+                            <Link href={`/${lang}/#about`}>{dict.navbar.about}</Link>
+                        </li>
+                        <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => setNav(false)}>
+                            <Link href={`/${lang}/#skills`}>{dict.navbar.skills}</Link>
+                        </li>
+                        <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => setNav(false)}>
+                            <Link href={`/${lang}/#projects`}>{dict.navbar.projects}</Link>
+                        </li>
+                        <li className={`py-4 uppercase hover:text-accent transition-all ease-in-out ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => setNav(false)}>
+                            <Link href={`/${lang}/#contact`}>{dict.navbar.contact}</Link>
+                        </li>
                     </ul>
                     <div className='pt-8'>
                         <p className='uppercase tracking-widest'>{dict.navbar.connect}</p>
                         <div className='flex items-center my-4 gap-6'>
-                            <a href="https://www.linkedin.com/in/diancir%C3%A9-diallo-b1888a21b/" className='hover:text-accent'>
+                            <a href="https://www.linkedin.com/in/diancir%C3%A9-diallo-b1888a21b/" className='hover:text-accent' aria-label="LinkedIn">
                                 <FaLinkedinIn size={25}/>
                             </a>
-                            <a href="https://github.com/Diancire" className='hover:text-accent'>
+                            <a href="https://github.com/Diancire" className='hover:text-accent' aria-label="GitHub">
                                 <FaGithub size={25}/>
                             </a>
-                            <a href='mailto:diancire.d01@gmail.com' className='hover:text-accent'>
+                            <a href='mailto:diancire.d01@gmail.com' className='hover:text-accent' aria-label="Email">
                                 <CgMail size={25}/>
                             </a>
                         </div>

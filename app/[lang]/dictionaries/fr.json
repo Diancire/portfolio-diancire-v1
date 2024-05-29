@@ -12,10 +12,14 @@
   },
   "hero": {
     "title": "Dianciré",
-    "subtitle": "Je suis une",
+    "subtitle": "Je suis",
     "slogan": "J'aime coder et donner vie aux idées",
     "contact_button": "Me contacter",
-    "portfolio_button": "Mon Portfolio"
+    "portfolio_button": "Mon Portfolio",
+    "developer": "Développeuse",
+    "passionate": "Passionnée",
+    "curious": "Curieuse",
+    "creative": "Créative"
   },
   "about": {
     "title": "À propos de moi",

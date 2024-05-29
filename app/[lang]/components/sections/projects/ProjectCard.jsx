@@ -15,8 +15,9 @@ function ProjectCard({ item, lang, dict, fadeIn }) {
       <Image 
         src={require(`../../../../../public/assets/projects/${item.image}`)} 
         alt={item.title} 
-        width={1000} 
-        height={1000} 
+        width={600} 
+        height={400} 
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className='rounded-xl group-hover:opacity-10' 
       />
       <div className='hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full'>

@@ -11,7 +11,7 @@ import emailjs from '@emailjs/browser';
 import ContactInfo from './ContactInfo';
 import ContactForm from './ContactForm';
 
-function Contact({ dict = {} }) {
+function Contact({ dict = {}, lang }) {
   // Reference to the form element
   const form = useRef(null);
   // State to handle loading state
@@ -74,7 +74,7 @@ function Contact({ dict = {} }) {
           </motion.div>
         </div>
         <div className='flex justify-center py-12'>
-          <Link href='/'>
+          <Link href={`/${lang}/`}>
             <div className='rounded-full btn pointer ease-in duration-300'>
               <HiOutlineChevronDoubleUp size={30} />
             </div>

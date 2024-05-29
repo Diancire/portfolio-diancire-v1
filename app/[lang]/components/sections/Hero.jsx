@@ -23,16 +23,15 @@ function Hero({dict = {}}) {
                     variants={fadeIn('up', 0.2)} 
                     initial="hidden" whileInView={'show'} 
                     viewport={{once: false, amount: 0.7}} 
-                    className='my-6 text-[40px] md:text-[56px] lg:text-[80px] font-primary font-semibold uppercase leading-[1]'>
-                    <span className='mr-4'>I am a</span>
+                    className='my-6 text-[50px] md:text-[66px] lg:text-[90px] font-primary font-semibold uppercase leading-[1]'>
                     <TypeAnimation sequence={[
-                        'Developer',
+                        dict.hero.developer,
                         2000,
-                        'Passionate',
+                        dict.hero.passionate,
                         2000,
-                        'Curious',
+                        dict.hero.curious,
                         2000,
-                        'Creative ',
+                        dict.hero.creative,
                         2000,
                     ]}
                     speed={50}
@@ -61,13 +60,13 @@ function Hero({dict = {}}) {
                     initial="hidden" whileInView={'show'} 
                     viewport={{once: false, amount: 0.8}}
                     className='flex text-[20px] gap-x-6 max-w-max mx-auto'>
-                    <a href="https://www.linkedin.com/in/diancir%C3%A9-diallo-b1888a21b/" className='hover:text-accent'>
+                    <a href="https://www.linkedin.com/in/diancir%C3%A9-diallo-b1888a21b/" className='hover:text-accent' aria-label="LinkedIn">
                         <FaLinkedinIn size={25}/>
                     </a>
-                    <a href="https://github.com/Diancire" className='hover:text-accent'>
+                    <a href="https://github.com/Diancire" className='hover:text-accent' aria-label="GitHub">
                         <FaGithub size={25}/>
                     </a>
-                    <a href='mailto:diancire.d01@gmail.com' className='hover:text-accent'>
+                    <a href='mailto:diancire.d01@gmail.com' className='hover:text-accent' aria-label="Email">
                         <CgMail size={25}/>
                     </a>
                 </motion.div>
