@@ -2,7 +2,7 @@ import { Oswald, Permanent_Marker } from "next/font/google";
 import "./globals.css";
 import MainLayout from "./components/layout/Main-Layout";
 import { getDictionary } from "./dictionaries";
-import site_bg from '../../public/site-bg.jpg'
+import site_bg from '../../public/site-bg.webp'
 
 export const oswald = Oswald({ 
   subsets: ["latin"],

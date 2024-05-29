@@ -1,10 +1,11 @@
-import About from "@/app/[lang]/components/sections/About";
-import Contact from "@/app/[lang]/components/sections/contact/Contact";
-import Hero from "@/app/[lang]/components/sections/Hero";
-import Projects from "@/app/[lang]/components/sections/projects/ProjectList";
-import Skills from "@/app/[lang]/components/sections/Skills";
 import { getDictionary } from "./dictionaries";
+import dynamic from 'next/dynamic';
 
+const Hero = dynamic(() => import('@/app/[lang]/components/sections/Hero'), { ssr: false });
+const About = dynamic(() => import('@/app/[lang]/components/sections/About'), { ssr: false });
+const Skills = dynamic(() => import('@/app/[lang]/components/sections/Skills'), { ssr: false });
+const ProjectList = dynamic(() => import('@/app/[lang]/components/sections/projects/ProjectList'), { ssr: false });
+const Contact = dynamic(() => import('@/app/[lang]/components/sections/contact/Contact'), { ssr: false });
 
 export default async function Home({ params }) {
   const { lang } = params;
@@ -19,9 +20,9 @@ export default async function Home({ params }) {
       {/* Skills */}
       <Skills dict={dict} />
       {/* Projects */}
-      <Projects dict={dict} />
+      <ProjectList dict={dict} />
       {/* Contact */}
-      <Contact dict={dict} />
+      <Contact dict={dict} lang={lang}/>
     </main>
   );
 }

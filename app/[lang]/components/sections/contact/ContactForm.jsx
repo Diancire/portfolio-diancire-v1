@@ -30,10 +30,11 @@ function ContactForm ({ form, sendEmail, isLoading, dict }) {
         required 
       />
       <div className='flex flex-col py-2'>
-        <label className='uppercase text-sm py-2'>Message *</label>
+        <label className='uppercase text-sm py-2' htmlFor='message'>Message *</label>
         <textarea
           className='border-2 rounded-lg p-3 border-gray-300 bg-transparent'
           rows='4'
+          id='message'
           name='message'
           required
         ></textarea>
