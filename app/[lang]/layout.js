@@ -2,7 +2,6 @@ import { Oswald, Permanent_Marker } from "next/font/google";
 import "./globals.css";
 import MainLayout from "./components/layout/Main-Layout";
 import { getDictionary } from "./dictionaries";
-import site_bg from '../../public/site-bg.webp'
 
 export const oswald = Oswald({ 
   subsets: ["latin"],
@@ -33,7 +32,7 @@ export default async function RootLayout({ children, params }) {
   
   return (
     <html lang={lang} className={`${oswald.variable} ${permanent_marker.variable}`}>
-      <body style={{ backgroundImage: `url(${site_bg.src})`}} className="bg-no-repeat bg-cover">
+      <body className="bg-primary">
         <MainLayout dict={dict} lang={lang}>
           {children}
         </MainLayout>
